@@ -1,0 +1,58 @@
+.hero {
+  background: url("/assets/images/hero/hero-bg.png") no-repeat center center/cover;
+  height: 80vh;
+  padding: 1rem;
+  @include flex-center(null, center);
+
+  @media (max-width: 768px) {
+    height: 65vh;
+  }
+  .container{
+     max-width: $container-width;
+     @include flex-center(flex-end,null);
+     width: 100%;
+     margin: 0 auto;
+     @media (max-width:768px) {
+       margin: 0 auto;
+     }
+     .hero-content {
+      background: $secondary-color;
+      padding: 4rem 2rem 2rem;
+      max-width: 643px;
+      height: auto;
+      border-radius: 10px;
+      .tag {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $heading-primary-color;
+        margin-top: 0;
+      }
+      h1 {
+        font-size: 3.25rem;
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 65px;
+
+        @media (max-width: 425px) {
+          line-height: 45px;
+        }
+        @media (max-width: 375px) {
+          font-size: 2rem;
+          line-height: 40px;
+        }
+      }
+      .description {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: $heading-primary-color;
+        line-height: 24px;
+        margin: 0.5rem 0 2rem 0;
+      }
+      .btn {
+        @include button;
+      }
+    }
+  }
+}

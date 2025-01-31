@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixins";
+@import "navbar";
+@import "hero";
+@import "browse-range";
+@import "product";
+@import "slider";
+@import "footer";
+
+
+// Global Styles
+* {
+    font-family: $font-primary;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Base font size for responsiveness
+html {
+    font-size: 16px; 
+    @media (max-width: 768px) {
+        font-size: 14px; 
+    }
+    @media (max-width: 480px) {
+        font-size: 12px; 
+    }
+}
+
+

@@ -1,0 +1,96 @@
+.footer {
+  background: rgba(255, 255, 255, 1);
+  padding: 3rem 1rem 2rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.17);
+
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+
+    .footer-content {
+      @include flex-center(space-between, center);
+      flex-wrap: wrap;
+      align-items: start;
+
+      .footer-brand {
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $black;
+          margin-bottom: 2.5rem;
+        }
+        address {
+          font-size: 1rem;
+          font-weight: 400;
+          color: $gray;
+          font-style: normal;
+        }
+      }
+
+      .footer-links,
+      .footer-help,
+      .footer-newsletter {
+        h4 {
+          font-size: 1rem;
+          font-weight: 500;
+          color: $gray;
+          margin-bottom: 2.5rem;
+        }
+        ul {
+          list-style: none;
+
+          li {
+            margin-bottom: 1.5rem;
+            a {
+              text-decoration: none;
+              color: $black;
+              font-size: 1rem;
+              font-weight: 500;
+              transition: 0.3s;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-newsletter {
+        .form-wrapper {
+          @include flex-center(center, center);
+          gap: 1rem;
+          form {
+            border-bottom: 1px solid $black;
+            input {
+              flex: 1;
+              border: none;
+              outline: none;
+              padding: 0.5rem 0;
+              font-size: 0.875rem;
+              color: $gray;
+              font-weight: 400;
+            }
+          }
+          button {
+            background: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 0.5rem 0;
+            border: none;
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $black;
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+  }
+}

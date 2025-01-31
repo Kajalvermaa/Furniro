@@ -1,0 +1,48 @@
+.browse-range {
+    padding: 3rem 1rem;
+    text-align: center;
+    .container {
+        max-width: $container-width;
+        margin: 0 auto;
+    }
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $heading-primary-color;
+    }
+    .section-subtitle {
+        font-size: 1.25rem;
+        color: $text-primary-color;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+    .range-grid {
+        @include flex-center(center);
+        gap: 1rem;
+        flex-wrap: wrap;
+        .range-item {
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease-in-out;
+            img {
+                width: 100%;
+                display: block;
+                border-radius: 10px;
+            }
+            p {
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding: 1.5rem 0;
+                color: $heading-primary-color;
+            }
+            &:hover {
+                transform: translateY(-5px);
+            }
+            @media (max-width:850px) {
+                max-width: 230px;
+            }
+        }
+    }
+
+}
