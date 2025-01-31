@@ -1,11 +1,11 @@
 .hero {
   background: url("../images/hero/hero-bg.png") no-repeat center center/cover;
-  height: 80vh;
+  height: 100vh;
   padding: 1rem;
   @include flex-center(null, center);
 
   @media (max-width: 768px) {
-    height: 65vh;
+    height: 80vh;
   }
   .container{
      max-width: $container-width;
@@ -34,6 +34,9 @@
         font-weight: 700;
         color: $primary-color;
         line-height: 65px;
+        overflow: hidden; /* Ensures the text is hidden until the animation completes */
+        white-space: nowrap; /* Keeps the text on a single line */
+        animation: typing 5s steps(50, end); /* Slower and smoother typing animation */
 
         @media (max-width: 425px) {
           line-height: 45px;
@@ -55,4 +58,14 @@
       }
     }
   }
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: $primary-color; }
 }

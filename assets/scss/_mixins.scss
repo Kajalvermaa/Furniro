@@ -10,14 +10,17 @@
 @mixin button {
     background: $primary-color;
     color: $white;
-    border: none;
+    border: 1px solid $primary-color;
     padding: 1rem 3.5rem; 
     font-size: 1rem; 
     font-weight: 700;
     line-height: 24px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, $primary-color 50%, $white 50%);
+    transition: background-position 0.3s ease;
     &:hover {
-        background: $primary-color;
+        background-position: -100% 0;
+        color: $primary-color;
     }
 }

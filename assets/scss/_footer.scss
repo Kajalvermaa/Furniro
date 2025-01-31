@@ -11,6 +11,7 @@
       @include flex-center(space-between, center);
       flex-wrap: wrap;
       align-items: start;
+      padding-bottom: 1rem;
 
       .footer-brand {
         h2 {
@@ -27,6 +28,12 @@
         }
       }
 
+      .footer-links-wrap{
+        @include flex-center(null,null);
+        flex-wrap: wrap;
+        gap: 5rem;
+      }
+
       .footer-links,
       .footer-help,
       .footer-newsletter {
@@ -35,6 +42,10 @@
           font-weight: 500;
           color: $gray;
           margin-bottom: 2.5rem;
+
+          @media (max-width:900px) {
+            margin-bottom: 1.5rem;
+          }
         }
         ul {
           list-style: none;
@@ -58,7 +69,8 @@
 
       .footer-newsletter {
         .form-wrapper {
-          @include flex-center(center, center);
+          @include flex-center(null, null);
+          flex-wrap: wrap;
           gap: 1rem;
           form {
             border-bottom: 1px solid $black;
@@ -81,6 +93,12 @@
             border-bottom: 1px solid black;
             display: inline-block;
           }
+          @media (max-width:900px) {
+            @include flex-center(flex-start,null);
+          }
+        }
+        @media (max-width:900px) {
+          width: 100%;
         }
       }
     }

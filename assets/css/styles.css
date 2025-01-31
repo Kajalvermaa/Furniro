@@ -38,7 +38,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    height: 30vh;
+    height: auto;
     width: 50%;
     background: #ffffff;
     display: flex;
@@ -178,14 +178,14 @@
 
 .hero {
   background: url("../images/hero/hero-bg.png") no-repeat center center/cover;
-  height: 80vh;
+  height: 100vh;
   padding: 1rem;
   display: flex;
   align-items: center;
 }
 @media (max-width: 768px) {
   .hero {
-    height: 65vh;
+    height: 80vh;
   }
 }
 .hero .container {
@@ -220,6 +220,9 @@
   font-weight: 700;
   color: #B88E2F;
   line-height: 65px;
+  overflow: hidden; /* Ensures the text is hidden until the animation completes */
+  white-space: nowrap; /* Keeps the text on a single line */
+  animation: typing 5s steps(50, end); /* Slower and smoother typing animation */
 }
 @media (max-width: 425px) {
   .hero .container .hero-content h1 {
@@ -242,18 +245,37 @@
 .hero .container .hero-content .btn {
   background: #B88E2F;
   color: #ffffff;
-  border: none;
+  border: 1px solid #B88E2F;
   padding: 1rem 3.5rem;
   font-size: 1rem;
   font-weight: 700;
   line-height: 24px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, #B88E2F 50%, #ffffff 50%);
+  transition: background-position 0.3s ease;
 }
 .hero .container .hero-content .btn:hover {
-  background: #B88E2F;
+  background-position: -100% 0;
+  color: #B88E2F;
 }
 
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #B88E2F;
+  }
+}
 .browse-range {
   padding: 3rem 1rem;
   text-align: center;
@@ -514,17 +536,20 @@
 .slider-section .slider-container .slider-content .explore-btn {
   background: #B88E2F;
   color: #ffffff;
-  border: none;
+  border: 1px solid #B88E2F;
   padding: 1rem 3.5rem;
   font-size: 1rem;
   font-weight: 700;
   line-height: 24px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, #B88E2F 50%, #ffffff 50%);
+  transition: background-position 0.3s ease;
   padding: 0.8rem 2.5rem;
 }
 .slider-section .slider-container .slider-content .explore-btn:hover {
-  background: #B88E2F;
+  background-position: -100% 0;
+  color: #B88E2F;
 }
 @media (max-width: 768px) {
   .slider-section .slider-container .slider-content {
@@ -544,7 +569,6 @@
 .slider-section .slider-container .slider .slide .slider-img {
   width: 450px;
   height: 520px;
-  border-radius: 10px;
   transition: width 0.5s ease, height 0.5s ease;
 }
 .slider-section .slider-container .slider .slide .slider-img.active {
@@ -658,6 +682,7 @@
   align-items: center;
   flex-wrap: wrap;
   align-items: start;
+  padding-bottom: 1rem;
 }
 .footer .container .footer-content .footer-brand h2 {
   font-size: 1.5rem;
@@ -671,6 +696,11 @@
   color: #9F9F9F;
   font-style: normal;
 }
+.footer .container .footer-content .footer-links-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
 .footer .container .footer-content .footer-links h4,
 .footer .container .footer-content .footer-help h4,
 .footer .container .footer-content .footer-newsletter h4 {
@@ -678,6 +708,13 @@
   font-weight: 500;
   color: #9F9F9F;
   margin-bottom: 2.5rem;
+}
+@media (max-width: 900px) {
+  .footer .container .footer-content .footer-links h4,
+  .footer .container .footer-content .footer-help h4,
+  .footer .container .footer-content .footer-newsletter h4 {
+    margin-bottom: 1.5rem;
+  }
 }
 .footer .container .footer-content .footer-links ul,
 .footer .container .footer-content .footer-help ul,
@@ -705,8 +742,7 @@
 }
 .footer .container .footer-content .footer-newsletter .form-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .footer .container .footer-content .footer-newsletter .form-wrapper form {
@@ -729,6 +765,17 @@
   color: black;
   border-bottom: 1px solid black;
   display: inline-block;
+}
+@media (max-width: 900px) {
+  .footer .container .footer-content .footer-newsletter .form-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 900px) {
+  .footer .container .footer-content .footer-newsletter {
+    width: 100%;
+  }
 }
 .footer .container .footer-bottom {
   font-size: 1rem;
