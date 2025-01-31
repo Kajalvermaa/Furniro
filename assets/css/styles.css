@@ -726,6 +726,7 @@
   font-weight: 500;
   font-size: 0.875rem;
   border: none;
+  color: black;
   border-bottom: 1px solid black;
   display: inline-block;
 }
