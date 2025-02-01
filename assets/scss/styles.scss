@@ -8,7 +8,6 @@
 @import "footer";
 
 
-// Global Styles
 * {
     font-family: $font-primary;
     margin: 0;
@@ -16,8 +15,8 @@
     box-sizing: border-box;
 }
 
-// Base font size for responsiveness
 html {
+    scroll-behavior: smooth;
     font-size: 16px; 
     @media (max-width: 768px) {
         font-size: 14px; 

@@ -8,7 +8,7 @@
 
     .section-title {
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight:$fw-700;
       color: $heading-secondary-color;
     }
 
@@ -70,26 +70,26 @@
 
           h3 {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight:$fw-600;
             color: $heading-secondary-color;
           }
 
           p {
             font-size: 1rem;
-            font-weight: 500;
+            font-weight:$fw-500;
             color: $text-secondary-color;
             margin: 0.5rem 0;
           }
 
           .price {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight:$fw-600;
             color: $heading-secondary-color;
           }
 
           .old-price {
             font-size: 1rem;
-            font-weight: 400;
+            font-weight:$fw-400;
             color: #b0b0b0;
             text-decoration: line-through;
             margin-left: 0.313rem;
@@ -117,25 +117,28 @@
             padding: 1rem 3rem;
             font-size: 1rem;
             color: $primary-color;
-            font-weight: 600;
+            font-weight:$fw-600;
             cursor: pointer;
-            transition: background 0.3s;
+            background-size: 200% 100%;
+            background-image: linear-gradient(to right, $white 50%, $primary-color 50%);
+            background-position: 0 0;
+            transition: background-position 0.3s ease, color 0.3s ease;
 
             &:hover {
+              background-position: -100% 0;
               color: $white;
-              background: $primary-color;
             }
           }
 
           .actions {
             margin-top: 10px;
-            display: flex;
+            @include flex-center(null,null);
             gap: 0.5rem;
             span {
               @include flex-center(center, center);
               gap: 0.5rem;
               font-size: 1rem;
-              font-weight: 600;
+              font-weight:$fw-600;
               color: $white;
             }
             .action-img {
@@ -163,13 +166,15 @@
       padding: 1rem 6rem;
       font-size: 1rem;
       color: $primary-color;
-      font-weight: 600;
+      font-weight:$fw-600;
       cursor: pointer;
-      transition: background 0.3s;
+      background-size: 200% 100%;
+      background-image: linear-gradient(to right, $white 50%, $primary-color 50%);
+      transition: background-position 0.3s ease, color 0.3s ease;
 
       &:hover {
+        background-position: -100% 0;
         color: $white;
-        background: $primary-color;
       }
 
       &.fade-out {

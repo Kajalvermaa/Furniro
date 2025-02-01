@@ -3,28 +3,26 @@
     padding: 3rem 0 3rem 1rem;
     position: relative;
 
-    .slider-container {
+    .container {
         @include flex-center(space-between, center);
         gap: 2rem;
 
         @media (min-width:1500px) {
-            margin: 0 0 0 calc((100vw - 1500px) / 2);
+            margin: 0 0 0 calc((100vw - $container-width) / 2.2);
         }
         @media (max-width:1500px) {
             margin: 0;
         }
         .slider-content {
-            max-width: 500px;
-
             h2 {
                 font-size: 2.5rem;
-                font-weight: 700;
+                font-weight:$fw-700;
                 color: $heading-secondary-color;
             }
 
             p {
                 font-size: 1rem;
-                font-weight: 500;
+                font-weight:$fw-500;
                 color: $text-color;
                 margin: 0.5rem 0 1.5rem;
             }
@@ -54,11 +52,11 @@
 
                     &.active {
                         height: 600px;
-                        @media (max-width:425px) {
+                        @media (max-width:500px) {
                             height: 500px;
                         }
                     }
-                    @media (max-width:425px) {
+                    @media (max-width:500px) {
                         width: 330px;
                     }
                     @media (max-width:320px) {
@@ -82,12 +80,12 @@
                         padding: 1.5rem;
                         span {
                           font-size: 1rem;
-                          font-weight: 500;
+                          font-weight:$fw-500;
                           color: $text-color;
                         }
                         h3 {
                           font-size: 1.75rem;
-                          font-weight: 600;
+                          font-weight:$fw-600;
                           color: $heading-secondary-color;
                           margin: 0.5rem 0 0 0;
                         }
@@ -108,6 +106,7 @@
         position: absolute;
         right: 0;
         bottom: 50%;
+        cursor: pointer;
         @media (max-width:768px) {
             bottom: 35%;
         }

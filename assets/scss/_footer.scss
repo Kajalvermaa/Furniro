@@ -8,23 +8,26 @@
     margin: 0 auto;
 
     .footer-content {
-      @include flex-center(space-between, center);
+      @include flex-center(space-between, start);
       flex-wrap: wrap;
-      align-items: start;
-      padding-bottom: 1rem;
-
       .footer-brand {
         h2 {
           font-size: 1.5rem;
-          font-weight: 700;
+          font-weight:$fw-700;
           color: $black;
           margin-bottom: 2.5rem;
+          @media (max-width:768px) {
+            margin-bottom: 1rem;
+          }
         }
         address {
           font-size: 1rem;
-          font-weight: 400;
+          font-weight:$fw-400;
           color: $gray;
           font-style: normal;
+        }
+        @media (max-width:768px) {
+          padding-bottom: 1rem;
         }
       }
 
@@ -39,7 +42,7 @@
       .footer-newsletter {
         h4 {
           font-size: 1rem;
-          font-weight: 500;
+          font-weight:$fw-500;
           color: $gray;
           margin-bottom: 2.5rem;
 
@@ -56,7 +59,7 @@
               text-decoration: none;
               color: $black;
               font-size: 1rem;
-              font-weight: 500;
+              font-weight:$fw-500;
               transition: 0.3s;
 
               &:hover {
@@ -75,22 +78,21 @@
           form {
             border-bottom: 1px solid $black;
             input {
-              flex: 1;
               border: none;
               outline: none;
               font-size: 0.875rem;
               color: $gray;
-              font-weight: 400;
+              font-weight:$fw-400;
             }
           }
           button {
             background: none;
             cursor: pointer;
-            font-weight: 500;
+            font-weight:$fw-500;
             font-size: 0.875rem;
             border: none;
-            color: black;
-            border-bottom: 1px solid black;
+            color: $black;
+            border-bottom: 1px solid $black;
             display: inline-block;
           }
           @media (max-width:900px) {
@@ -104,7 +106,7 @@
     }
     .footer-bottom {
       font-size: 1rem;
-      font-weight: 400;
+      font-weight:$fw-400;
       color: $black;
       margin-top: 2rem;
       border-top: 1px solid #ddd;

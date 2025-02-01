@@ -7,13 +7,13 @@
     }
     .section-title {
         font-size: 2rem;
-        font-weight: 700;
+        font-weight:$fw-700;
         color: $heading-primary-color;
     }
     .section-subtitle {
         font-size: 1.25rem;
         color: $text-primary-color;
-        font-weight: 400;
+        font-weight:$fw-400;
         margin-top: 0;
         margin-bottom: 3rem;
     }
@@ -32,7 +32,7 @@
             }
             p {
                 font-size: 1.5rem;
-                font-weight: 600;
+                font-weight:$fw-600;
                 padding: 1.5rem 0;
                 color: $heading-primary-color;
             }
