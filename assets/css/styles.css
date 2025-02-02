@@ -183,22 +183,12 @@
   display: flex;
   align-items: center;
 }
-@media (max-width: 768px) {
-  .hero {
-    height: 80vh;
-  }
-}
 .hero .container {
   max-width: 1500px;
   display: flex;
   justify-content: flex-end;
   width: 100%;
   margin: 0 auto;
-}
-@media (max-width: 768px) {
-  .hero .container {
-    margin: 0 auto;
-  }
 }
 .hero .container .hero-content {
   background: #FFF3E3;
@@ -270,6 +260,16 @@
   background-position: -100% 0;
   color: #B88E2F;
 }
+@media (max-width: 768px) {
+  .hero .container {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
+}
 
 .browse-range {
   padding: 3rem 1rem;
@@ -288,20 +288,22 @@
   font-size: 1.25rem;
   color: #666666;
   font-weight: 400;
-  margin-top: 0;
   margin-bottom: 3rem;
 }
 .browse-range .range-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
 }
 .browse-range .range-grid .range-item {
   width: 100%;
   max-width: 400px;
-  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .browse-range .range-grid .range-item img {
   width: 100%;
@@ -314,12 +316,23 @@
   padding: 1.5rem 0;
   color: #333333;
 }
-.browse-range .range-grid .range-item:hover {
-  transform: translateY(-5px);
-}
 @media (max-width: 850px) {
   .browse-range .range-grid .range-item {
-    max-width: 230px;
+    max-width: auto;
+  }
+}
+.browse-range .range-grid .animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -466,16 +479,6 @@
 }
 .products-section .container .products-grid .product-card:hover .overlay {
   opacity: 1;
-}
-@media (max-width: 768px) {
-  .products-section .container .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-@media (max-width: 480px) {
-  .products-section .container .products-grid {
-    grid-template-columns: 1fr;
-  }
 }
 .products-section .container .show-more {
   background: #ffffff;

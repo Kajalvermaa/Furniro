@@ -159,4 +159,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     updateSlides();
+
+
+    // on scroll animation for browse range 
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.range-item').forEach((item) => {
+              item.classList.add('animate');
+            });
+          } else {
+            entry.target.querySelectorAll('.range-item').forEach((item) => {
+              item.classList.remove('animate');
+            });
+          }
+        });
+      }, observerOptions);
+    
+      const browseRangeSection = document.querySelector('.browse-range');
+      observer.observe(browseRangeSection);
 });

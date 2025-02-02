@@ -4,17 +4,11 @@
   padding: 3rem 1rem;
   @include flex-center(null, center);
 
-  @media (max-width: 768px) {
-    height: 80vh;
-  }
   .container {
     max-width: $container-width;
     @include flex-center(flex-end, null);
     width: 100%;
     margin: 0 auto;
-    @media (max-width: 768px) {
-      margin: 0 auto;
-    }
     .hero-content {
       background: $secondary-color;
       padding: 4rem 2rem 2rem;
@@ -68,5 +62,11 @@
         @include button;
       }
     }
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 768px) {
+    height: 80vh;
   }
 }
